@@ -10,6 +10,12 @@ public class Book {
     public Book() {
     }
 
+    public Book(String title, Float price, String discritpion) {
+        this.title = title;
+        this.price = price;
+        this.discritpion = discritpion;
+    }
+
     public Book(String title, Float price, String discritpion, String number) {
         this.title = title;
         this.price = price;

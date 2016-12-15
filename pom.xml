@@ -47,7 +47,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
-    <dependencyManagement>
         <dependencies>
             <!-- This has most of the needed dependencies : Derby, JPA, EJB, Java EE 6... -->
             <dependency>
@@ -185,6 +184,5 @@
                 <scope>test</scope>
             </dependency>
         </dependencies>
-    </dependencyManagement>
 
 </project>

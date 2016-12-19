@@ -1,9 +1,22 @@
 package com.devctrl.agoncal.data.entity;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+@Entity
+@NamedQueries({
+        @NamedQuery(name = "findAllBooks", query = "select b from Book b"),
+        @NamedQuery(name = "findBookH2G2", query = "select b from Book b where b.tittle = 'H2G2'")
+})
 public class Book {
 
+    @Id @GeneratedValue
+    private int id;
     private String title;
+    @NotNull
     private Float price;
+    @Size(min = 10, max =  2000)
     private String discritpion;
     private String number;
 
@@ -21,6 +34,14 @@ public class Book {
         this.price = price;
         this.discritpion = discritpion;
         this.number = number;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {

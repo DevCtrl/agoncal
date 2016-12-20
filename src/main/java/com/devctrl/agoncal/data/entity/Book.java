@@ -7,7 +7,6 @@ import javax.validation.constraints.Size;
 @Entity
 @NamedQueries({
         @NamedQuery(name = "findAllBooks", query = "select b from Book b"),
-        @NamedQuery(name = "findBookH2G2", query = "select b from Book b where b.tittle = 'H2G2'")
 })
 public class Book {
 
@@ -17,22 +16,22 @@ public class Book {
     @NotNull
     private Float price;
     @Size(min = 10, max =  2000)
-    private String discritpion;
+    private String description;
     private String number;
 
     public Book() {
     }
 
-    public Book(String title, Float price, String discritpion) {
+    public Book(String title, Float price, String description) {
         this.title = title;
         this.price = price;
-        this.discritpion = discritpion;
+        this.description = description;
     }
 
-    public Book(String title, Float price, String discritpion, String number) {
+    public Book(String title, Float price, String description, String number) {
         this.title = title;
         this.price = price;
-        this.discritpion = discritpion;
+        this.description = description;
         this.number = number;
     }
 
@@ -60,12 +59,12 @@ public class Book {
         this.price = price;
     }
 
-    public String getDiscritpion() {
-        return discritpion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDiscritpion(String discritpion) {
-        this.discritpion = discritpion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getNumber() {

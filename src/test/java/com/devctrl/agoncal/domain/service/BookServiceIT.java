@@ -1,6 +1,7 @@
 package com.devctrl.agoncal.domain.service;
 
 import com.devctrl.agoncal.data.entity.Book;
+import com.devctrl.agoncal.domain.service.impl.BookServiceImpl;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 import org.junit.Test;
@@ -21,7 +22,7 @@ public class BookServiceIT {
         System.setProperty(Weld.ARCHIVE_ISOLATION_SYSTEM_PROPERTY, "false");
         WeldContainer container = weld.initialize();
 
-        BookService bookService = container.instance().select(BookService.class).get();
+        BookServiceImpl bookService = container.instance().select(BookServiceImpl.class).get();
 
         Book book = bookService.createBook("H2G2", 12.5f, "Geeky scifi Book");
 

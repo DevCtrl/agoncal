@@ -51,7 +51,7 @@ public class CustomerIT {
         assertEquals(1, violations.size());
         assertEquals("invalid email address", violations.iterator().next().getMessage());
         assertEquals("DummyEmail", violations.iterator().next().getInvalidValue());
-        assertEquals("{org.agoncal.book.javaee7.chapter03.Email.message}", violations.iterator().next().getMessageTemplate());
+        assertEquals("{com.devctrl.agoncal.domain.validators.email.Email.message}", violations.iterator().next().getMessageTemplate());
     }
 
 }

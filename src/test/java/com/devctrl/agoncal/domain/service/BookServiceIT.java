@@ -24,7 +24,7 @@ public class BookServiceIT {
 
         BookServiceImpl bookService = container.instance().select(BookServiceImpl.class).get();
 
-        Book book = bookService.createBook("H2G2", 12.5f, "Geeky scifi Book");
+        Book book = bookService.saveBook("H2G2", 12.5f, "Geeky scifi Book");
 
         assertTrue(book.getNumber().startsWith("MOCK"));
 

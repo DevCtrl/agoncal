@@ -19,4 +19,9 @@ public interface BookRepository extends Repository{
     Book deleteBook(Book book);
     FullBook deleteFullBook(FullBook book);
 
+    Book updateBook(Book book);
+    FullBook updateFullBook(FullBook book);
+
+    Book getBookById(long id);
+    FullBook getFullBookById(long id);
 }

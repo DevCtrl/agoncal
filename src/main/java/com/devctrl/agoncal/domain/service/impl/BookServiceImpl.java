@@ -23,7 +23,7 @@ public class BookServiceImpl implements BookService {
     @Inject @BookRepoInject
     private BookRepository bookRepository;
 
-    public Book createBook(String title, Float price, String description) {
+    public Book saveBook(String title, Float price, String description) {
         Book book = new Book(title, price, description);
         book.setNumber(numberGenerator.generateNumber());
         return book;
@@ -35,6 +35,22 @@ public class BookServiceImpl implements BookService {
 
     public FullBook saveFullBook(FullBook book){
         return bookRepository.saveFullBook(book);
+    }
+
+    public Book updateBook(Book book) {
+        return bookRepository.updateBook(book);
+    }
+
+    public FullBook updateFullBook(FullBook book) {
+        return bookRepository.updateFullBook(book);
+    }
+
+    public Book getBookById(long id) {
+        return bookRepository.getBookById(id);
+    }
+
+    public FullBook getFullBookById(long id) {
+        return bookRepository.getFullBookById(id);
     }
 
     public List<Book> retrieveBooks(){
